@@ -1,0 +1,191 @@
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-text-title);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+}
+h1 {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+}
+h2 {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+}
+h3 {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+}
+h4 {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-semibold);
+}
+h5 {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-semibold);
+}
+h6 {
+    font-size: var(--font-size-h6);
+    font-weight: var(--font-weight-semibold);
+}
+
+p {
+    line-height: var(--line-height-loose);
+}
+
+hr {
+    border: none;
+    border-top: var(--border-thin-weak);
+}
+
+strong, b {
+    color: var(--color-text-title);
+    font-weight: var(--font-weight-semibold);
+}
+
+em, i {
+    color: var(--color-text-title);
+    font-style: italic;
+}
+
+u {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+s, del {
+    text-decoration: line-through;
+    color: var(--color-text-meta);
+}
+
+ins {
+    text-decoration: underline;
+    background-color: var(--color-bg-meta);
+}
+
+small {
+    font-size: var(--font-size-meta);
+    letter-spacing: var(--letter-spacing-loose);
+    color: var(--color-text-meta);
+}
+
+time {
+    font-size: var(--font-size-meta);
+    letter-spacing: var(--letter-spacing-loose);
+    color: var(--color-text-meta);
+}
+
+sub, sup {
+    font-size: var(--font-size-caption);
+    position: relative;
+    vertical-align: baseline;
+}
+sup {
+    top: -0.5em;
+}
+sub {
+    bottom: -0.25em;
+}
+
+mark {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-on-primary);
+    padding: var(--padding-code-inline-x) var(--padding-code-inline-y);
+    border-radius: var(--radius-code-inline);
+}
+
+abbr[title] {
+    border-bottom: var(--border-thin-weak);
+    color: var(--color-text-meta);
+    cursor: help;
+    
+    @media (hover: hover) {
+        &:hover {
+            color: var(--color-text-base);
+            border-bottom-color: var(--color-text-base);
+        }
+    }
+}
+
+dfn {
+    font-style: italic;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-title);
+}
+
+address {
+    font-style: normal;
+    font-size: var(--font-size-meta);
+    letter-spacing: var(--letter-spacing-loose);
+    color: var(--color-text-meta);
+}
+
+summary {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-title);
+    cursor: pointer;
+}
+
+q {
+    quotes: "“" "”" "‘" "’";
+    font-style: italic;
+    color: var(--color-text-title);
+    
+    &::before {
+        content: open-quote;
+    }
+    &::after {
+        content: close-quote;
+    }
+}
+
+blockquote {
+    padding: var(--padding-code-block);
+    border-left: var(--border-thick-normal);
+}
+
+cite {
+    font-style: italic;
+    font-size: var(--font-size-meta);
+    letter-spacing: var(--letter-spacing-loose);
+    color: var(--color-text-meta);
+}
+
+a {
+    color: var(--color-text-link);
+    font-weight: var(--font-weight-semibold);
+    transition: var(--common-transition);
+
+    @media (hover: hover) {
+        &:hover {
+            color: var(--color-text-link-hover);
+            text-decoration: underline;
+        }
+    }
+
+    &:active {
+        color: var(--color-text-link-active);
+    }
+}
+
+code, kbd {
+    font-family: var(--font-family-mono);
+    color: var(--color-text-code);
+    background-color: var(--color-bg-code);
+    
+    padding: var(--padding-code-inline-x) var(--padding-code-inline-y);
+    border-radius: var(--radius-code-inline);
+
+    word-break: break-all;
+}
+
+pre, samp {
+    font-family: var(--font-family-mono);
+    color: var(--color-text-code);
+    background-color: var(--color-bg-code);
+    line-height: var(--line-height-loose);
+
+    display: block;
+    padding: var(--padding-code-block);
+    border-radius: var(--radius-code-block);
+    overflow-x: auto;
+}

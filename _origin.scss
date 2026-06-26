@@ -1,0 +1,128 @@
+/*
+ * Rule: $origin-[GROUP]-[PROPERTY]-{DETAIL}-{SCALE}
+ * [GROUP]    : 필수 | Category (e.g., color, font, spacing, radius, shadow)
+ * {PROPERTY} : 옵션 | Attribute (e.g., family, weight, height, width)
+ * {DETAIL}   : 옵션 | Detailed role (e.g., snap, interactive)
+ * {SCALE}    : 옵션 | Incremental value or direction (e.g., 1, 2, 3, up, down)
+ */
+// ==========================================
+//  MAIN COLORS
+// ==========================================
+$origin-color-neutral: #a3adc0; // neutral-500
+$origin-color-primary: #3b82f6; // primary-500
+
+// ==========================================
+//  STATUS COLORS
+// ==========================================
+$origin-color-success: #22c55e; // success-500
+$origin-color-warning: #f5b74c; // warning-500
+$origin-color-danger: #f46b6b; // danger-500
+
+// ==========================================
+//  FONT FAMILY
+// ==========================================
+$origin-font-family-sans: "'Inter', 'Noto Sans KR', -apple-system, sans-serif";
+$origin-font-family-mono: "'Cascadia Code', monospace";
+
+// ==========================================
+//  FONT SIZE
+// ==========================================
+$origin-font-size: 16px;
+$origin-use-font-size-snap-to-4: true;
+$origin-font-size-ratio-up: 1.2;
+$origin-font-size-ratio-down: 1.5;
+
+// ==========================================
+//  FONT WEIGHT
+// ==========================================
+$origin-font-weight-1: 100;
+$origin-font-weight-2: 400;
+$origin-font-weight-3: 500;
+$origin-font-weight-4: 600;
+$origin-font-weight-5: 700;
+
+// ==========================================
+//  LETTER SPACING
+// ==========================================
+$origin-letter-spacing-1: -0.02em;
+$origin-letter-spacing-2: 0em;
+$origin-letter-spacing-3: 0.05em;
+
+// ==========================================
+//  LINE HEIGHT
+// ==========================================
+$origin-line-height-1: 1.2;
+$origin-line-height-2: 1.5;
+$origin-line-height-3: 1.8;
+
+// ==========================================
+//  WIDTH/HEIGHT
+// ==========================================
+$origin-size-interactive: 56px;
+$origin-height-bar: 12px;
+$origin-size-handle: 24px;
+$origin-size-icon: 24px;
+
+// ==========================================
+//  SPACING SIZE
+// ==========================================
+$origin-spacing: 16px;
+$origin-use-spacing-snap-to-4: true;
+$origin-spacing-ratio-up: 1.2;
+$origin-spacing-ratio-down: 1.5;
+
+// ==========================================
+//  BORDER WIDTH SIZE
+// ==========================================
+$origin-border-width: 1px;
+$origin-use-border-width-snap-to-4: false;
+$origin-border-width-ratio-up: 3;
+$origin-border-width-ratio-down: 1;
+
+// ==========================================
+//  BORDER RADIUS
+// ==========================================
+$origin-radius: 16px;
+$origin-radius-use-snap-to-4: true;
+$origin-radius-ratio-up: 1.35;
+$origin-radius-ratio-down: 1.5;
+$origin-radius-action: 999em;
+
+// ==========================================
+//  SHADOW
+// ==========================================
+$origin-shadow-y: 2px;
+$origin-shadow-y-ratio-up: 1.5;
+$origin-shadow-y-ratio-down: 1;
+$origin-shadow-blur: 6px;
+$origin-shadow-blur-ratio-up: 1.5;
+$origin-shadow-blur-ratio-down: 1;
+$origin-shadow-opacity: 0.4;
+$origin-shadow-opacity-ratio-up: 0.8;
+$origin-shadow-opacity-ratio-down: 1;
+$origin-shadow-spread: -1px;
+$origin-shadow-color: #000000;
+
+// ==========================================
+//  FOCUS SHADOW
+// ==========================================
+$origin-shadow-focus-color: $origin-color-primary;
+$origin-shadow-focus-spread: 3px;
+$origin-shadow-focus-opacity: 0.4;
+
+// ==========================================
+//  DISABLED OPACITY
+// ==========================================
+$origin-opacity-disabled: 0.5;
+
+// ==========================================
+//  TRANSFORM SCALE
+// ==========================================
+$origin-transform-scale-1: 0.98;
+$origin-transform-scale-2: 0.88;
+
+// ==========================================
+//  ANIMATION
+// ==========================================
+$origin-animation-duration: 0.2s;
+$origin-animation-timing: ease-in-out;

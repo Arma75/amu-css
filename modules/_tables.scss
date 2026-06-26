@@ -1,0 +1,98 @@
+table {
+    width: 100%;
+    text-align: left;
+    border-collapse: separate; 
+    border-spacing: 0;
+    border: var(--border-thin-weak);
+    border-radius: var(--radius-table);
+    box-shadow: var(--shadow-soft);
+}
+
+caption {
+    color: var(--color-text-meta);
+    font-size: var(--font-size-meta);
+    letter-spacing: var(--letter-spacing-loose);
+    text-align: left;
+}
+
+th, td {
+    padding: var(--padding-table-cell);
+    vertical-align: middle;
+    word-break: break-all;
+}
+th {
+    font-weight: var(--font-weight-medium);
+}
+
+thead {
+    th, td {
+        background-color: var(--color-bg-table-header);
+        color: var(--color-text-inversed);
+
+        border-top: var(--border-thin-normal);
+        border-bottom: var(--border-thin-normal);
+        border-right: var(--border-thin-normal);
+
+        &:first-child {
+            border-left: var(--border-thin-normal);
+        }
+    }
+
+    tr:first-child {
+        th:first-child, td:first-child {
+            border-top-left-radius: var(--radius-table);
+        }
+        th:last-child, td:last-child {
+            border-top-right-radius: var(--radius-table);
+        }
+    }
+}
+
+tbody {
+    tr {
+        background-color: var(--color-bg-card);
+        
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-bg-meta);
+                transition: var(--common-transition);
+            }
+        }
+    }
+}
+
+tfoot {
+    tr {
+        background-color: var(--color-bg-base);
+    }
+    
+    th, td {
+        font-weight: var(--font-weight-medium);
+    }
+
+    tr:last-child {
+        :first-child {
+            border-bottom-left-radius: var(--radius-table);
+        }
+        :last-child {
+            border-bottom-right-radius: var(--radius-table);
+        }
+    }
+}
+
+table:not(:has(thead)) tbody tr:first-child {
+    :first-child {
+        border-top-left-radius: var(--radius-table);
+    }
+    :last-child {
+        border-top-right-radius: var(--radius-table);
+    }
+}
+table:not(:has(tfoot)) tbody tr:last-child {
+    :first-child {
+        border-bottom-left-radius: var(--radius-table);
+    }
+    :last-child {
+        border-bottom-right-radius: var(--radius-table);
+    }
+}

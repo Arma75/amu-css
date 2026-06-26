@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-body);
+}
+
+header,
+main,
+aside,
+section,
+article,
+footer,
+dialog[open] {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-nested-container);
+    padding: var(--padding-nested-container);
+}
+article, dialog[open] {
+    border-radius: var(--radius-nested-container);
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap-nested-container);
+    padding: var(--padding-nested-nav-x) var(--padding-nested-nav-y);
+}
+
+article, dialog[open] {
+    background-color: var(--color-bg-card);
+    border: var(--border-thin-weak);
+    overflow: hidden;
+
+    box-shadow: var(--shadow-hard);
+}
+
+body > header,
+body > main,
+body > aside,
+body > section,
+body > article,
+body > footer {
+    gap: var(--gap-root-container);
+    padding: var(--padding-root-container);
+}
+body > article {
+    border-radius: var(--radius-root-container);
+}
+body > nav {
+    gap: var(--gap-root-container);
+    padding: var(--padding-root-nav-x) var(--padding-root-nav-y);
+}

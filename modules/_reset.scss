@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: var(--font-size-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+
+    scroll-behavior: smooth;
+    scrollbar-color: var(--color-bg-scrollbar-thumb) var(--color-bg-scrollbar-track);
+    scrollbar-width: thin;
+}
+body {
+    font-family: var(--font-family-sans);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-normal);
+
+    color: var(--color-text-base);
+    background-color: var(--color-bg-base);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input, button, textarea, select {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+input:focus, button:focus, textarea:focus, select:focus {
+    outline: none;
+}
+
+button, select, a {
+    cursor: pointer;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a, abbr {
+    text-decoration: none;
+}
+
+em, i, address, cite, dfn, var {
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-bg-scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-bg-scrollbar-thumb);
+    border-radius: var(--radius-thumb);
+
+    @media (hover: hover) {
+        &:hover {
+            background: var(--color-bg-scrollbar-thumb-hover);
+        }
+    }
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-bg-scrollbar-thumb-hover);
+}
+
+::selection {
+    background-color: var(--color-bg-selection);
+    color: var(--color-text-inversed);
+}

@@ -1,0 +1,166 @@
+/*
+ * Rule: --raw-[GROUP]-[PROPERTY]-{DETAIL}-{SCALE}
+ * [GROUP]    : 필수 | Category (e.g., color, font, spacing, radius, shadow)
+ * {PROPERTY} : 옵션 | Attribute (e.g., family, weight, height, width)
+ * {DETAIL}   : 옵션 | Detailed role (e.g., snap, interactive)
+ * {SCALE}    : 옵션 | Incremental value or direction (e.g., 1, 2, 3, up, down)
+ */
+@use "../origin" as origin;
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+@use "sass:list";
+
+@function snap-to-4($value) {
+    @return math.round(math.div($value, 4)) * 4;
+}
+
+@mixin generate-scale($name, $base-value, $base-scale, $max-scale, $ratio-up, $ratio-down, $use-snap) {
+    $calc-ratio-up: $ratio-up;
+    $calc-ratio-down: $ratio-down;
+    $use-snap-to-4: $use-snap;
+    
+    $base-scale: math.max(1, $base-scale);
+    $max-scale: math.max($base-scale, $max-scale);
+
+    @for $i from 1 to $base-scale {
+        $calculated-value: $base-value / math.pow($calc-ratio-down, $base-scale - $i);
+        $value: if($use-snap-to-4, #{snap-to-4($calculated-value)}, $calculated-value);
+        --raw-#{$name}-#{$i}: #{$value};
+    }
+    @for $i from $base-scale through $max-scale {
+        $calculated-value: $base-value * math.pow($calc-ratio-up, $i - $base-scale);
+        $value: if($use-snap-to-4, #{snap-to-4($calculated-value)}, $calculated-value);
+        --raw-#{$name}-#{$i}: #{$value};
+    }
+}
+
+@mixin generate-shadow($name, $base-scale, $max-scale) {
+    @for $i from 1 through $max-scale {
+        $diff: $i - $base-scale;
+
+        $y: origin.$origin-shadow-y * math.pow(origin.$origin-shadow-y-ratio-up, $diff);
+        $blur: origin.$origin-shadow-blur * math.pow(origin.$origin-shadow-blur-ratio-up, $diff);
+        $opacity: origin.$origin-shadow-opacity * math.pow(origin.$origin-shadow-opacity-ratio-up, $diff);
+        
+        --raw-#{$name}-#{$i}: 0 #{$y} #{$blur} #{origin.$origin-shadow-spread} #{color.change(origin.$origin-shadow-color, $alpha: $opacity)};
+    }
+}
+
+$color-bases: (
+    "color-neutral": origin.$origin-color-neutral,
+    "color-primary": origin.$origin-color-primary,
+    "color-success": origin.$origin-color-success,
+    "color-warning": origin.$origin-color-warning,
+    "color-danger": origin.$origin-color-danger
+);
+$color-scales: (
+    "50": (white, 95%),
+    "100": (white, 85%),
+    "200": (white, 70%),
+    "300": (white, 50%),
+    "400": (white, 25%),
+    "500": (white, 0%),
+    "600": (black, 15%),
+    "700": (black, 35%),
+    "800": (black, 55%),
+    "900": (black, 75%),
+    "950": (black, 88%)
+);
+
+:root {
+    // ==========================================
+    //  COLOR
+    // ==========================================
+    @each $name, $base-color in $color-bases {
+        @each $step, $mix-info in $color-scales {
+            $mix-color: list.nth($mix-info, 1);
+            $weight: list.nth($mix-info, 2);
+
+            --raw-#{$name}-#{$step}: #{color.mix($mix-color, $base-color, $weight)};
+        }
+    }
+
+    // ==========================================
+    //  FONT FAMILY
+    // ==========================================
+    --raw-font-family-sans: #{origin.$origin-font-family-sans};
+    --raw-font-family-mono: #{origin.$origin-font-family-mono};
+
+    // ==========================================
+    //  FONT SIZE
+    // ==========================================
+    @include generate-scale("font-size", origin.$origin-font-size, 2, 7, origin.$origin-font-size-ratio-up, origin.$origin-font-size-ratio-down, origin.$origin-use-font-size-snap-to-4);
+
+    // ==========================================
+    //  FONT WEIGHT
+    // ==========================================
+    --raw-font-weight-1: #{origin.$origin-font-weight-1};
+    --raw-font-weight-2: #{origin.$origin-font-weight-2};
+    --raw-font-weight-3: #{origin.$origin-font-weight-3};
+    --raw-font-weight-4: #{origin.$origin-font-weight-4};
+    --raw-font-weight-5: #{origin.$origin-font-weight-5};
+
+    // ==========================================
+    //  LETTER SPACING
+    // ==========================================
+    --raw-letter-spacing-1: #{origin.$origin-letter-spacing-1};
+    --raw-letter-spacing-2: #{origin.$origin-letter-spacing-2};
+    --raw-letter-spacing-3: #{origin.$origin-letter-spacing-3};
+
+    // ==========================================
+    //  LINE HEIGHT VARIABLES
+    // ==========================================
+    --raw-line-height-1: #{origin.$origin-line-height-1};
+    --raw-line-height-2: #{origin.$origin-line-height-2};
+    --raw-line-height-3: #{origin.$origin-line-height-3};
+
+    // ==========================================
+    //  WIDTH/HEIGHT
+    // ==========================================
+    --raw-size-interactive: #{origin.$origin-size-interactive};
+    --raw-height-bar: #{origin.$origin-height-bar};
+    --raw-size-handle: #{origin.$origin-size-handle};
+    --raw-size-icon: #{origin.$origin-size-icon};
+
+    // ==========================================
+    //  SPACING SIZE
+    // ==========================================
+    @include generate-scale("spacing", origin.$origin-spacing, 4, 13, origin.$origin-spacing-ratio-up, origin.$origin-spacing-ratio-down, origin.$origin-use-spacing-snap-to-4);
+
+    // ==========================================
+    //  BORDER WIDTH
+    // ==========================================
+    @include generate-scale("border-width", origin.$origin-border-width, 1, 2, origin.$origin-border-width-ratio-up, origin.$origin-border-width-ratio-down, origin.$origin-use-border-width-snap-to-4);
+
+    // ==========================================
+    //  BORDER RADIUS
+    // ==========================================
+    @include generate-scale("radius", origin.$origin-radius, 2, 7, origin.$origin-radius-ratio-up, origin.$origin-radius-ratio-down, origin.$origin-radius-use-snap-to-4);
+    --raw-radius-action: #{origin.$origin-radius-action};
+
+    // ==========================================
+    //  SHADOW
+    // ==========================================
+    @include generate-shadow("shadow", 1, 2);
+    --raw-shadow-focus-color: #{origin.$origin-shadow-focus-color};
+    --raw-shadow-focus-spread: #{origin.$origin-shadow-focus-spread};
+    --raw-shadow-focus-opacity: #{origin.$origin-shadow-focus-opacity};
+
+    // ==========================================
+    //  DISABLED OPACITY
+    // ==========================================
+    --raw-opacity-disabled: #{origin.$origin-opacity-disabled};
+
+    // ==========================================
+    //  TRANSFORM SCALE
+    // ==========================================
+    --raw-transform-scale-1: #{origin.$origin-transform-scale-1};
+    --raw-transform-scale-2: #{origin.$origin-transform-scale-2};
+
+    // ==========================================
+    //  ANIMATION
+    // ==========================================
+    --raw-animation-duration: #{origin.$origin-animation-duration};
+    --raw-animation-timing: #{origin.$origin-animation-timing};
+}

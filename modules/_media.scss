@@ -1,0 +1,42 @@
+figure {
+    background-color: var(--color-bg-card);
+    border: var(--border-thin-weak);
+    padding: var(--padding-sub-group);
+    border-radius: var(--radius-sub-group);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sub-group);
+}
+
+figcaption {
+    color: var(--color-text-meta);
+    text-align: center;
+}
+
+img, video, iframe, audio {
+    display: block;
+    width: 100%;
+    border-radius: var(--radius-media);
+}
+img, video {
+    object-fit: cover;
+}
+audio {
+    height: var(--size-interactive);
+    border-radius: var(--radius-bar);
+}
+iframe {
+    aspect-ratio: 16 / 9;
+    border: none;
+}
+
+svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    
+    width: var(--size-icon);
+    height: var(--size-icon);
+}

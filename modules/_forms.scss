@@ -1,0 +1,59 @@
+fieldset {
+    border: var(--border-thin-normal);
+    padding: var(--padding-sub-group);
+    border-radius: var(--radius-sub-group);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-sub-group);
+}
+
+legend {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-title);
+}
+
+progress, meter {
+    width: 100%;
+    height: var(--height-bar);
+    border-radius: var(--radius-bar);
+    position: relative;
+}
+
+progress::-webkit-progress-bar {
+    background: var(--color-bg-meta);
+    border-radius: var(--radius-bar);
+}
+progress::-webkit-progress-value {
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-bar);
+}
+
+meter::-webkit-meter-bar {
+    height: var(--height-bar);
+    background: var(--color-bg-meta);
+    border-radius: var(--radius-bar);
+}
+meter::-webkit-meter-even-less-good-value { 
+    background: var(--color-bg-danger);
+    border-radius: var(--radius-bar);
+}
+meter::-webkit-meter-suboptimum-value { 
+    background: var(--color-bg-warning);
+    border-radius: var(--radius-bar);
+}
+meter::-webkit-meter-optimum-value { 
+    background: var(--color-bg-success);
+    border-radius: var(--radius-bar);
+}
+
+output {
+    font-family: var(--font-family-mono);
+    color: var(--color-text-code);
+    background-color: var(--color-bg-code);
+
+    padding: var(--padding-code-inline-x) var(--padding-code-inline-y);
+    border-radius: var(--radius-code-inline);
+
+    word-break: break-all;
+}

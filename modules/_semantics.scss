@@ -1,0 +1,262 @@
+:root {
+    // ==========================================
+    //  TEXT - FONT COLOR
+    // ==========================================
+    --color-text-title: var(--raw-color-neutral-950);
+    --color-text-base: var(--raw-color-neutral-800);
+    --color-text-meta: var(--raw-color-neutral-500);
+    --color-text-inversed: var(--raw-color-neutral-50);
+    --color-text-code: var(--raw-color-neutral-50);
+    --color-text-on-primary: var(--raw-color-neutral-50);
+    --color-text-link: var(--raw-color-primary-500);
+    --color-text-link-hover: var(--raw-color-primary-600);
+    --color-text-link-active: var(--raw-color-primary-700);
+
+    // ==========================================
+    //  TEXT - FONT FAMILY
+    // ==========================================
+    --font-family-sans: var(--raw-font-family-sans);
+    --font-family-mono: var(--raw-font-family-mono);
+
+    // ==========================================
+    //  TEXT - FONT SIZE
+    // ==========================================
+    --font-size-meta: var(--raw-font-size-1);
+    --font-size-body: var(--raw-font-size-2);
+    --font-size-h6: var(--raw-font-size-2);
+    --font-size-h5: var(--raw-font-size-3);
+    --font-size-h4: var(--raw-font-size-4);
+    --font-size-h3: var(--raw-font-size-5);
+    --font-size-h2: var(--raw-font-size-6);
+    --font-size-h1: var(--raw-font-size-7);
+
+    // ==========================================
+    //  TEXT - FONT WEIGHT
+    // ==========================================
+    --font-weight-thin: var(--raw-font-weight-1);
+    --font-weight-regular: var(--raw-font-weight-2);
+    --font-weight-medium: var(--raw-font-weight-3);
+    --font-weight-semibold: var(--raw-font-weight-4);
+    --font-weight-bold: var(--raw-font-weight-5);
+
+    // ==========================================
+    //  TEXT - LETTER SPACING
+    // ==========================================
+    --letter-spacing-tight: var(--raw-letter-spacing-1);
+    --letter-spacing-normal: var(--raw-letter-spacing-2);
+    --letter-spacing-loose: var(--raw-letter-spacing-3);
+
+    // ==========================================
+    //  TEXT - LINE HEIGHT VARIABLES
+    // ==========================================
+    --line-height-tight: var(--raw-line-height-1);
+    --line-height-normal: var(--raw-line-height-2);
+    --line-height-loose: var(--raw-line-height-3);
+
+    // ==========================================
+    //  SHAPE - BACKGROUND COLOR
+    // ==========================================
+    --color-bg-base: var(--raw-color-neutral-100);
+    --color-bg-card: var(--raw-color-neutral-50);
+    --color-bg-meta: var(--raw-color-neutral-200);
+    --color-bg-selection: var(--raw-color-neutral-800);
+    --color-bg-table-header: var(--raw-color-neutral-900);
+    --color-bg-code: var(--raw-color-neutral-950);
+    --color-bg-primary: var(--raw-color-primary-500);
+    --color-bg-success: var(--raw-color-success-500);
+    --color-bg-warning: var(--raw-color-warning-500);
+    --color-bg-danger: var(--raw-color-danger-500);
+    --color-bg-scrollbar-track: var(--raw-color-neutral-100);
+    --color-bg-scrollbar-thumb: var(--raw-color-neutral-300);
+    --color-bg-scrollbar-thumb-hover: var(--raw-color-neutral-950);
+
+    // ==========================================
+    //  SHAPE - WIDTH/HEIGHT
+    // ==========================================
+    --size-interactive: var(--raw-size-interactive);
+    --size-handle: var(--raw-size-handle);
+    --size-icon: var(--raw-size-icon);
+    --height-bar: var(--raw-height-bar);
+
+    // ==========================================
+    //  SHAPE - PADDING
+    // ==========================================
+    --padding-code-inline-x: var(--raw-spacing-1);
+    --padding-code-inline-y: var(--raw-spacing-2);
+    --padding-input-file: var(--raw-spacing-2);
+    --padding-definition-detail: var(--raw-spacing-2);
+    --padding-table-cell: var(--raw-spacing-4);
+    --padding-input: var(--raw-spacing-5);
+    --padding-button: var(--raw-spacing-5);
+    --padding-list-stack: var(--raw-spacing-5);
+    --padding-code-block: var(--raw-spacing-6);
+    --padding-sub-group: var(--raw-spacing-7);
+    --padding-nested-nav-x: var(--raw-spacing-8);
+    --padding-nested-nav-y: var(--raw-spacing-9);
+    --padding-nested-container: var(--raw-spacing-9);
+    --padding-root-nav-x: var(--raw-spacing-11);
+    --padding-root-nav-y: var(--raw-spacing-12);
+    --padding-root-container: var(--raw-spacing-12);
+
+    // ==========================================
+    //  SHAPE - GAP
+    // ==========================================
+    --gap-list-nested-stack: var(--raw-spacing-1);
+    --gap-list-root-stack: var(--raw-spacing-3);
+    --gap-sub-group: var(--raw-spacing-5);
+    --gap-nested-container: var(--raw-spacing-7);
+    --gap-root-container: var(--raw-spacing-10);
+    --gap-body: var(--raw-spacing-13);
+
+    // ==========================================
+    //  BORDER - BORDER
+    // ==========================================
+    --border-thin-weak: var(--raw-border-width-1) solid var(--raw-color-neutral-200);
+    --border-thin-normal: var(--raw-border-width-1) solid var(--raw-color-neutral-300);
+    --border-thin-strong: var(--raw-border-width-1) solid var(--raw-color-neutral-400);
+    --border-thin-primary-weak: var(--raw-border-width-1) solid var(--raw-color-primary-300);
+    --border-thin-primary-normal: var(--raw-border-width-1) solid var(--raw-color-primary-600);
+    --border-thin-primary-strong: var(--raw-border-width-1) solid var(--raw-color-primary-700);
+    --border-thick-normal: var(--raw-border-width-2) solid var(--raw-color-neutral-300);
+    --border-thin-warning-weak: var(--raw-border-width-1) solid var(--raw-color-warning-300);
+    --border-thin-warning-normal: var(--raw-border-width-1) solid var(--raw-color-warning-600);
+    --border-thin-warning-strong: var(--raw-border-width-1) solid var(--raw-color-warning-700);
+    --border-thin-danger-weak: var(--raw-border-width-1) solid var(--raw-color-danger-300);
+    --border-thin-danger-strong: var(--raw-border-width-1) solid var(--raw-color-danger-600);
+
+    // ==========================================
+    //  BORDER - BORDER RADIUS
+    // ==========================================
+    --radius-code-inline: var(--raw-radius-1);
+    --radius-checkbox: var(--raw-radius-1);
+    --radius-table: var(--raw-radius-2);
+    --radius-media: var(--raw-radius-2);
+    --radius-input: var(--raw-radius-3);
+    --radius-code-block: var(--raw-radius-4);
+    --radius-sub-group: var(--raw-radius-5);
+    --radius-nested-container: var(--raw-radius-6);
+    --radius-root-container: var(--raw-radius-7);
+    --radius-button: var(--raw-radius-action);
+    --radius-thumb: var(--raw-radius-action);
+    --radius-bar: var(--raw-radius-action);
+
+    // ==========================================
+    //  SHADOW - SHADOW
+    // ==========================================
+    --shadow-soft: var(--raw-shadow-1);
+    --shadow-hard: var(--raw-shadow-2);
+
+    // ==========================================
+    //  SHADOW - FOCUS SHADOW
+    // ==========================================
+    --shadow-focus: 0 0 0 var(--raw-shadow-focus-spread) color-mix(in srgb, var(--raw-shadow-focus-color), transparent calc((1 - var(--raw-shadow-focus-opacity)) * 100%));
+
+    // ==========================================
+    //  INTERACTION - DISABLED OPACITY
+    // ==========================================
+    --opacity-disabled: var(--raw-opacity-disabled);
+
+    // ==========================================
+    //  INTERACTION - TRANSFORM SCALE
+    // ==========================================
+    --transform-scale-weak: var(--raw-transform-scale-1);
+    --transform-scale-strong: var(--raw-transform-scale-2);
+
+    // ==========================================
+    //  INTERACTION - ANIMATION
+    // ==========================================
+    --common-transition: all var(--raw-animation-duration) var(--raw-animation-timing);
+}
+
+/* dark mode */
+[data-theme='dark'] {
+    // ==========================================
+    //  TEXT - FONT COLOR
+    // ==========================================
+    --color-text-title: var(--raw-color-neutral-50);
+    --color-text-base: var(--raw-color-neutral-200);
+    --color-text-meta: var(--raw-color-neutral-500);
+    --color-text-inversed: var(--raw-color-neutral-950);
+    --color-text-code: var(--raw-color-neutral-950);
+    --color-text-on-primary: var(--raw-color-neutral-950);
+    --color-text-link: var(--raw-color-primary-500);
+    --color-text-link-hover: var(--raw-color-primary-400);
+    --color-text-link-active: var(--raw-color-primary-300);
+
+    // ==========================================
+    //  SHAPE - BACKGROUND COLOR
+    // ==========================================
+    --color-bg-base: var(--raw-color-neutral-900);
+    --color-bg-card: var(--raw-color-neutral-950);
+    --color-bg-meta: var(--raw-color-neutral-800);
+    --color-bg-selection: var(--raw-color-neutral-200);
+    --color-bg-table-header: var(--raw-color-neutral-100);
+    --color-bg-code: var(--raw-color-neutral-50);
+    --color-bg-primary: var(--raw-color-primary-500);
+    --color-bg-success: var(--raw-color-success-500);
+    --color-bg-warning: var(--raw-color-warning-500);
+    --color-bg-danger: var(--raw-color-danger-500);
+    --color-bg-scrollbar-track: var(--raw-color-neutral-900);
+    --color-bg-scrollbar-thumb: var(--raw-color-neutral-700);
+    --color-bg-scrollbar-thumb-hover: var(--raw-color-neutral-50);
+
+    // ==========================================
+    //  BORDER - BORDER
+    // ==========================================
+    --border-thin-weak: var(--raw-border-width-1) solid var(--raw-color-neutral-800);
+    --border-thin-normal: var(--raw-border-width-1) solid var(--raw-color-neutral-700);
+    --border-thin-strong: var(--raw-border-width-1) solid var(--raw-color-neutral-600);
+    --border-thin-primary-weak: var(--raw-border-width-1) solid var(--raw-color-primary-700);
+    --border-thin-primary-normal: var(--raw-border-width-1) solid var(--raw-color-primary-400);
+    --border-thin-primary-strong: var(--raw-border-width-1) solid var(--raw-color-primary-300);
+    --border-thick-normal: var(--raw-border-width-2) solid var(--raw-color-neutral-700);
+    --border-thin-warning-weak: var(--raw-border-width-1) solid var(--raw-color-warning-700);
+    --border-thin-warning-normal: var(--raw-border-width-1) solid var(--raw-color-warning-400);
+    --border-thin-warning-strong: var(--raw-border-width-1) solid var(--raw-color-warning-300);
+    --border-thin-danger-weak: var(--raw-border-width-1) solid var(--raw-color-danger-700);
+    --border-thin-danger-strong: var(--raw-border-width-1) solid var(--raw-color-danger-400);
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    :root {
+        // ==========================================
+        //  SHAPE - PADDING
+        // ==========================================
+        --padding-nested-nav-x: var(--raw-spacing-7);
+        --padding-nested-nav-y: var(--raw-spacing-8);
+        --padding-nested-container: var(--raw-spacing-8);
+        --padding-root-nav-x: var(--raw-spacing-10);
+        --padding-root-nav-y: var(--raw-spacing-11);
+        --padding-root-container: var(--raw-spacing-11);
+
+        // ==========================================
+        //  SHAPE - GAP
+        // ==========================================
+        --gap-nested-container: var(--raw-spacing-6);
+        --gap-root-container: var(--raw-spacing-9);
+        --gap-body: var(--raw-spacing-12);
+    }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    :root {
+        // ==========================================
+        //  SHAPE - PADDING
+        // ==========================================
+        --padding-nested-nav-x: var(--raw-spacing-5);
+        --padding-nested-nav-y: var(--raw-spacing-6);
+        --padding-nested-container: var(--raw-spacing-6);
+        --padding-root-nav-x: var(--raw-spacing-8);
+        --padding-root-nav-y: var(--raw-spacing-9);
+        --padding-root-container: var(--raw-spacing-9);
+
+        // ==========================================
+        //  SHAPE - GAP
+        // ==========================================
+        --gap-nested-container: var(--raw-spacing-4);
+        --gap-root-container: var(--raw-spacing-7);
+        --gap-body: var(--raw-spacing-10);
+    }
+}
