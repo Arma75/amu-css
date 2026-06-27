@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>pure html button</title>
+
+        <!-- Meta Tags -->
+        <meta charset="UTF-8"/> <!-- 문자 인코딩 설정 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- 반응형 웹 설정 -->
+
+        <!-- CSS Stylesheet -->
+        <link id="theme-link" rel="stylesheet" href="">
+        <link rel="stylesheet" href="./amu.css">
+    </head>
+
+    <body>
+        <section>
+            <select id="theme-selector">
+                <option value="">Default</option>
+                <option value="https://cdn.jsdelivr.net/gh/Arma75/amu-css/amu.css">Amu</option>
+                <option value="https://cdn.jsdelivr.net/npm/marx-css/css/marx.min.css">Marx</option>
+                <option value="https://cdn.jsdelivr.net/npm/mvp.css@1.16/mvp.min.css">MVP</option>
+                <option value="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1/new.min.css">New</option>
+                <option value="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">Pico</option>
+                <option value="https://cdn.jsdelivr.net/npm/sakura.css@1.3.1/css/sakura.css">Sakura</option>
+                <option value="https://cdn.jsdelivr.net/npm/simpledotcss@2.3.3/simple.min.css">Simple</option>
+                <option value="https://cdn.jsdelivr.net/gh/yegor256/tacit@gh-pages/tacit-css-1.5.0.min.css">Tacit</option>
+                <option value="https://cdn.jsdelivr.net/npm/tufte-css/tufte.min.css">Tufte</option>
+                <option value="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">Water</option>
+            </select>
+        </section>
+
+        <section style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; align-items: start;">
+            <!-- 1. 기본 버튼 (Action) -->
+            <article>
+                <h5>경고 알림 버튼</h5>
+                <button type="button" onclick="alert('경고!!')">경고 알림</button>
+                <p>button type="button"</p>
+            </article>
+
+            <!-- 2. Form Submit 버튼 (데이터 전송) -->
+            <article>
+                <h5>폼 제출 버튼</h5>
+                <button type="submit">제출하기</button>
+                <p>button type="submit"</p>
+            </article>
+
+            <!-- 3. Form Reset 버튼 (데이터 초기화) -->
+            <article>
+                <h5>폼 초기화 버튼</h5>
+                <button type="reset">다시 쓰기</button>
+                <p>button type="reset"</p>
+            </article>
+
+            <!-- 4. Input 타입 버튼 (레거시 대응) -->
+            <article>
+                <h5>입력 타입 버튼</h5>
+                <input type="button" value="클릭 가능 영역" onclick="alert('입력 버튼 작동')">
+                <p>input type="button"</p>
+            </article>
+
+            <!-- 5. Link를 포함한 버튼 (내비게이션) -->
+            <article>
+                <h5>페이지 이동 버튼</h5>
+                <button type="button" onclick="location.href='https://github.com'">깃허브로 이동</button>
+                <p>button type="button"</p>
+            </article>
+
+            <!-- 6. 인쇄 버튼 (기능 버튼) -->
+            <article>
+                <h5>인쇄 버튼</h5>
+                <button type="button" onclick="window.print()">문서 인쇄</button>
+                <p>button type="button"</p>
+            </article>
+
+            <!-- 아이콘만 있는 버튼 -->
+            <article>
+                <h5>아이콘 전용 버튼</h5>
+                <button type="button" aria-label="다음으로 이동">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </article>
+
+            <!-- 아이콘과 글자가 함께 있는 버튼 -->
+            <article>
+                <h5>아이콘 + 텍스트 버튼</h5>
+                <button type="button">
+                    <span>상세보기</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </article>
+
+            <!-- 7. Input Submit 버튼 (레거시 폼 전송) -->
+            <article>
+                <h5>Input Submit</h5>
+                <input type="submit" value="전송하기">
+                <p>input type="submit"</p>
+            </article>
+
+            <!-- 8. Input Reset 버튼 (레거시 폼 초기화) -->
+            <article>
+                <h5>Input Reset</h5>
+                <input type="reset" value="초기화">
+                <p>input type="reset"</p>
+            </article>
+
+            <!-- 9. 이미지 버튼 (사용자 정의 아이콘) -->
+            <article>
+                <h5>이미지 버튼</h5>
+                <input type="image" src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r7.png" alt="Gmail 이동 버튼">
+                <p>input type="image"</p>
+            </article>
+
+            <!-- 10. 비활성화 버튼 (Disabled) -->
+            <article>
+                <h5>비활성 버튼</h5>
+                <button type="button" disabled>클릭 불가</button>
+                <p>button[disabled]</p>
+            </article>
+
+            <!-- 11. 링크 버튼 (시맨틱하게 꾸며진 링크) -->
+            <article>
+                <h5>버튼형 링크</h5>
+                <a href="https://google.com" target="_blank" role="button">구글 이동</a>
+                <p>a[role="button"]</p>
+            </article>
+
+            <!-- 11. 링크 버튼 (시맨틱하게 꾸며진 링크) -->
+            <article>
+                <h5>버튼형 링크</h5>
+                <a href="https://google.com" target="_blank" role="button" disabled>구글 이동</a>
+                <p>a[role="button"]</p>
+            </article>
+        </section>
+
+        <!-- scripts-->
+        <script>
+            const themeSelector = document.getElementById('theme-selector');
+            const themeLink = document.getElementById('theme-link');
+
+            themeSelector.addEventListener('change', (event) => {
+                const newUrl = event.target.value;
+                themeLink.href = newUrl;
+                console.log('테마 변경됨:', newUrl);
+            });
+        </script>
+    </body>
+</html>

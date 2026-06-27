@@ -803,4 +803,8 @@ button:has(svg:only-child) {
     height: var(--size-interactive);
     border-radius: var(--radius-button);
     padding: 0;
+
+    &:active {
+        transform: scale(var(--transform-scale-strong));
+    }
 }

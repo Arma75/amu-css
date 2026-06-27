@@ -91,9 +91,12 @@ $origin-radius-action: 999em;
 // ==========================================
 //  SHADOW
 // ==========================================
+$origin-shadow-x: 0;
+$origin-shadow-x-ratio-up: 1;
+$origin-shadow-x-ratio-down: 1;
 $origin-shadow-y: 2px;
 $origin-shadow-y-ratio-up: 1.5;
-$origin-shadow-y-ratio-down: 1;
+$origin-shadow-y-ratio-down: 1.2;
 $origin-shadow-blur: 6px;
 $origin-shadow-blur-ratio-up: 1.5;
 $origin-shadow-blur-ratio-down: 1;

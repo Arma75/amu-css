@@ -166,6 +166,51 @@ a {
         color: var(--color-text-link-active);
     }
 }
+a[role="button"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    text-align: center;
+
+    height: var(--size-interactive);
+    padding: 0 var(--padding-button);
+    background-color: var(--color-bg-primary);
+    border-radius: var(--radius-button);
+    border: var(--border-thin-primary-weak);
+    color: var(--color-text-on-primary);
+    font-weight: var(--font-weight-regular);
+
+    box-shadow: var(--shadow-soft);
+    cursor: pointer;
+    user-select: none;
+    
+    transition: var(--common-transition);
+    
+    @media (hover: hover) {
+        &:hover {
+            border: var(--border-thin-primary-normal);
+            box-shadow: var(--shadow-soft);
+            text-decoration: none;
+        }
+    }
+
+    &:active {
+        transform: scale(var(--transform-scale-weak));
+    }
+    
+    &:focus {
+        border: var(--border-thin-primary-strong);
+        box-shadow: var(--shadow-focus);
+
+        @media (hover: hover) {
+            &:hover {
+                border: var(--border-thin-primary-strong);
+                box-shadow: var(--shadow-focus);
+            }
+        }
+    }
+}
 
 code, kbd {
     font-family: var(--font-family-mono);

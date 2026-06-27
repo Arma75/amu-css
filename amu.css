@@ -584,6 +584,47 @@ a:active {
   color: var(--color-text-link-active);
 }
 
+a[role=button] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  text-align: center;
+  height: var(--size-interactive);
+  padding: 0 var(--padding-button);
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-button);
+  border: var(--border-thin-primary-weak);
+  color: var(--color-text-on-primary);
+  font-weight: var(--font-weight-regular);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: var(--common-transition);
+}
+@media (hover: hover) {
+  a[role=button]:hover {
+    border: var(--border-thin-primary-normal);
+    box-shadow: var(--shadow-soft);
+    text-decoration: none;
+  }
+}
+a[role=button]:active {
+  transform: scale(var(--transform-scale-weak));
+}
+a[role=button]:focus {
+  border: var(--border-thin-primary-strong);
+  box-shadow: var(--shadow-focus);
+}
+@media (hover: hover) {
+  a[role=button]:focus:hover {
+    border: var(--border-thin-primary-strong);
+    box-shadow: var(--shadow-focus);
+  }
+}
+
 code, kbd {
   font-family: var(--font-family-mono);
   color: var(--color-text-code);
@@ -1670,6 +1711,9 @@ button:has(svg:only-child) {
   height: var(--size-interactive);
   border-radius: var(--radius-button);
   padding: 0;
+}
+button:has(svg:only-child):active {
+  transform: scale(var(--transform-scale-strong));
 }
 
 fieldset {

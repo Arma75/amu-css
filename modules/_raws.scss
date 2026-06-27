@@ -36,14 +36,25 @@
 }
 
 @mixin generate-shadow($name, $base-scale, $max-scale) {
-    @for $i from 1 through $max-scale {
+    @for $i from 1 to $base-scale {
+        $diff: $base-scale - $i;
+
+        $x: origin.$origin-shadow-x / math.pow(origin.$origin-shadow-x-ratio-up, $diff);
+        $y: origin.$origin-shadow-y / math.pow(origin.$origin-shadow-y-ratio-up, $diff);
+        $blur: origin.$origin-shadow-blur / math.pow(origin.$origin-shadow-blur-ratio-up, $diff);
+        $opacity: origin.$origin-shadow-opacity / math.pow(origin.$origin-shadow-opacity-ratio-up, $diff);
+        
+        --raw-#{$name}-#{$i}: #{$x} #{$y} #{$blur} #{origin.$origin-shadow-spread} #{color.change(origin.$origin-shadow-color, $alpha: $opacity)};
+    }
+    @for $i from $base-scale through $max-scale {
         $diff: $i - $base-scale;
 
+        $x: origin.$origin-shadow-x * math.pow(origin.$origin-shadow-x-ratio-up, $diff);
         $y: origin.$origin-shadow-y * math.pow(origin.$origin-shadow-y-ratio-up, $diff);
         $blur: origin.$origin-shadow-blur * math.pow(origin.$origin-shadow-blur-ratio-up, $diff);
         $opacity: origin.$origin-shadow-opacity * math.pow(origin.$origin-shadow-opacity-ratio-up, $diff);
         
-        --raw-#{$name}-#{$i}: 0 #{$y} #{$blur} #{origin.$origin-shadow-spread} #{color.change(origin.$origin-shadow-color, $alpha: $opacity)};
+        --raw-#{$name}-#{$i}: #{$x} #{$y} #{$blur} #{origin.$origin-shadow-spread} #{color.change(origin.$origin-shadow-color, $alpha: $opacity)};
     }
 }
 
