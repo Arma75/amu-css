@@ -6,6 +6,9 @@ fieldset {
     display: flex;
     flex-direction: column;
     gap: var(--gap-sub-group);
+
+    min-width: 0; 
+    width: 100%;
 }
 
 legend {
